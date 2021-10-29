@@ -1,0 +1,54 @@
+body{
+  background-color:#222628;
+}
+
+main h1{
+  text-align: center;
+  color:white;
+  font-family: Roboto;
+  border-radius: 4px;
+  line-height: 4rem;
+  font-size: 3rem;
+  font-weight: lighter;
+  
+}
+main h4{
+  text-align: center;
+  color: white;
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 0.67rem;
+  line-height: 1px;
+
+}
+
+.div1{
+  text-align: center;
+  box-shadow: none;
+ }
+ 
+.boton1{
+  background-color: rgb(224, 20, 88);
+  height:40px; 
+  width:190px;
+  color: aliceblue;
+  border-radius: 2rem;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.divbtn{
+  font-size: 8px;
+  font-weight: 800;
+  transform: scale(1.1,1);
+
+}
+
+div.div2{
+  text-align: center;
+}
+
+
+.imagen1{
+  border-radius: 20px;
+}
