@@ -234,6 +234,12 @@ body{
 
     .title-card-char{
         padding-bottom: 40px;
+        font-size: 15px;
+    }
+
+    .text-card-char{
+        font-size: 15px;
+
     }
 
     .avatar{
