@@ -1,0 +1,170 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 973px;
+    display: flex;
+    justify-content: center;
+    background-color: #262626;
+    flex-direction: column;
+    align-items: center;
+    
+     
+}
+
+.container{
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin: 20px 20px 0px 20px;
+}
+.flexbox-container{
+    display: flex;
+    flex-direction: column;         
+}
+.card1{
+    width: 700px;
+    height: 200px;    
+}
+.card2{
+    width: 700px;
+    height: 200px;
+}
+.card3{
+    width: 700px;
+}
+
+.father{
+    display: flex;
+    flex-direction: column;
+    background-color: #262626;
+}
+
+.flexbox-container-char{
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container{
+    padding: 30px 30px 10px 30px;
+    
+}
+
+.image-container-char{
+    padding: 0px 0px 20px 0px;
+    
+}
+
+.image{
+    width: 23%;
+    border-radius: 5px;
+}
+
+.image-char{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.title-card{
+    padding: 0px 0px 10px 30px;
+    font-family: rubik;
+}
+
+.title-card-char{
+    padding: 10px 0px 10px 30px;
+    font-family: rubik;
+}
+
+.text-card{
+    color: #777;
+    padding: 0px 20px 30px 30px;
+    line-height: 25px;
+}
+
+.text-card-char{
+    color: #474747;
+    padding: 0px 20px 0px 30px;
+}
+
+.label{
+    padding: 0px 0px 0px 30px;
+    color: #ff7a18;
+    font-family: rubik;
+    font-size: 12px;
+    font-weight: bold;
+}
+.link{
+    color: #0089c7;
+}
+
+.avatar{
+    border-radius: 200px;
+    width: 100px;
+    padding: 20px;
+        
+}
+
+.footer-char{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nombre{
+    font-family: rubik;
+    font-size: bold;
+    padding-right: 5px;
+}
+
+.fecha{
+    font-family: rubik;
+    color: #777; 
+}
+
+@media (min-width: 750px){
+    body{
+        /* width: 100%; */
+        display: flex;
+        justify-content: center;
+        background-color: #262626;
+        flex-direction: row;
+        align-items: center;
+        
+          
+    }
+     .container{
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        align-items: center;
+     
+    }
+
+    .father{
+        background-color:#262626;
+        flex-basis: auto;
+        width: 400px;
+        height: 530px;
+        align-self: flex-start;
+        
+    }
+    .card1{
+        width: 400px;
+        height: 240px;
+    }
+    .card2{
+        width: 400px;
+        height: 240px;
+    }
+    .card3{
+        width: 400px;
+        height: 500px;
+        align-self: flex-start;
+        margin: 40px;
+    }
+   
+     
+}
