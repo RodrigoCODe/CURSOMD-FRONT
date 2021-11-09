@@ -5,42 +5,56 @@
 }
 
 body{
-    width: 973px;
+    width: 100%;
     display: flex;
     justify-content: center;
     background-color: #262626;
     flex-direction: column;
-    align-items: center;
-    
-     
+    align-items: flex-start;
+             
 }
 
 .container{
     display: flex;
     background-color: #ffffff;
     border-radius: 20px;
-    margin: 20px 20px 0px 20px;
+    margin: 20px 0px 0px 0px;
+    width: 100%;
+    /* border: 1px solid coral; */
+      
 }
+
 .flexbox-container{
     display: flex;
-    flex-direction: column;         
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
 }
+
 .card1{
-    width: 700px;
-    height: 200px;    
+    width: 100%;
+    height: 100%; 
+    padding: 0;
+    margin: 0;
+               
 }
 .card2{
-    width: 700px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 20px 0px 0px 0px;
 }
 .card3{
-    width: 700px;
+    width: 100%;
+    height: 100%;
 }
 
 .father{
     display: flex;
     flex-direction: column;
     background-color: #262626;
+    width: 100%;
+    
 }
 
 .flexbox-container-char{
@@ -71,6 +85,7 @@ body{
 .title-card{
     padding: 0px 0px 10px 30px;
     font-family: rubik;
+   
 }
 
 .title-card-char{
@@ -82,6 +97,7 @@ body{
     color: #777;
     padding: 0px 20px 30px 30px;
     line-height: 25px;
+    
 }
 
 .text-card-char{
@@ -102,8 +118,11 @@ body{
 
 .avatar{
     border-radius: 200px;
-    width: 100px;
-    padding: 20px;
+    width: 50px;
+    
+    padding-right: 0;
+    margin: 20px;
+    margin-top: 30px;
         
 }
 
@@ -117,6 +136,7 @@ body{
     font-family: rubik;
     font-size: bold;
     padding-right: 5px;
+    
 }
 
 .fecha{
@@ -124,46 +144,56 @@ body{
     color: #777; 
 }
 
-@media (min-width: 750px){
+@media (min-width: 874px){
+   
     body{
-        /* width: 100%; */
         display: flex;
-        justify-content: center;
         background-color: #262626;
         flex-direction: row;
-        align-items: center;
+        width: 100%;
         
-          
     }
+    
      .container{
         display: flex;
         flex-direction: column;
         background-color: #ffffff;
         align-items: center;
+        
      
     }
 
     .father{
         background-color:#262626;
-        flex-basis: auto;
+        /* flex-basis: auto; */
         width: 400px;
         height: 530px;
-        align-self: flex-start;
+        /* align-self: flex-start; */
+        justify-content: space-between;
+        margin: 40px;
+        padding: 0px;
         
     }
     .card1{
         width: 400px;
-        height: 240px;
+        height: 250px;
+        margin-top: 0;
+        
+        
     }
     .card2{
         width: 400px;
-        height: 240px;
+        height: 250px;
+        margin-top: 40px;
+         
     }
+
     .card3{
         width: 400px;
-        height: 500px;
+        height: 530px;
         align-self: flex-start;
         margin: 40px;
+        
     }
    
      
