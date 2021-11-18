@@ -53,3 +53,53 @@ console.log("\n" + "###################","\n");
 
 //ejercicio 3
 
+function getCarsByProperty(cars, property, condition){
+    let filteredCarsByCond = cars.filter(car => {
+        switch (property){
+            case 'puertas':
+                if(typeof condition === 'number'){
+                    return car.puertas <= condition;
+                }else{
+                    console.log('Error, el parametro no es numerico');
+                }
+                break;
+            case 'marca':
+                if(typeof condition === 'string'){
+                    return car.marca == condition;
+                }else{
+                    console.log('Error, el parametro no es string')
+                }
+                break;
+            case 'modelo':
+                if(typeof condition === 'string'){
+                    return car.modelo == condition;
+                }else{
+                    console.log('Error, el parametro no es string')
+                }
+                break;
+            default:
+                console.log('La propiedad ingresada no es correcta');
+        }
+    });
+    return filteredCarsByCond;
+}
+
+let autosMarcaPuertaGenaro = getCarsByProperty(autosPuertaGenaro, 'marca', 'Ford');
+let outcome2 = getCarsByProperty(autosPuertaGenaro, 'modelo', 'Fiesta');
+let outcome3 = getCarsByProperty(autosPuertaGenaro, 'marca', 'Chevrolet');
+let outcome4 = getCarsByProperty(autosPuertaGenaro, 'puertas', 2);
+console.log("--------------------")
+console.log("Ejercicio 3");
+console.log("--------------------");
+console.log("Autos de Genaro marca Ford:");
+getModelCar(autosMarcaPuertaGenaro);
+console.log("--------------------");
+console.log("Autos de Genaro marca Ford y modelo Fiesta:");
+getModelCar(outcome2);
+console.log("--------------------");
+console.log("Autos de Genaro marca Chevrolet:");
+getModelCar(outcome3);
+console.log("--------------------");
+console.log("Autos de Genaro con 2 puertas:");
+getModelCar(outcome4);
+
