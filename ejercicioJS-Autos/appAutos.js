@@ -102,4 +102,19 @@ getModelCar(outcome3);
 console.log("--------------------");
 console.log("Autos de Genaro con 2 puertas:");
 getModelCar(outcome4);
+console.log("\n" + "###################","\n");
 
+//ejercicio 4
+function getBoughtCar(cars, modelCar){
+    let bouthCar;
+    bouthCar = cars.find(car => {
+        return car.modelo === modelCar;
+    });
+    return bouthCar;
+}
+
+let autoComprado = getBoughtCar(autosMarcaPuertaGenaro, 'Mustang');
+console.log("--------------------")
+console.log("Ejercicio 4");
+console.log("--------------------");
+console.log(`Felicitaciones Genaro por haber adquirido tu nuevo y flamante ${autoComprado.marca} ${autoComprado.modelo} que disfrutes tus ${autoComprado.puertas} puertas`);
