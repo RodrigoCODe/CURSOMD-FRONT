@@ -32,7 +32,7 @@ console.log("Ejercicio 1");
 console.log("--------------------");
 console.log("Todos los autos disponibles:","\n");
 getModelCar(autosDisponibles);
-console.log("\n","###################","\n");
+console.log("\n"+"###################","\n");
 
 //ejercicio 2
 
@@ -83,7 +83,7 @@ function getCarsByProperty(cars, property, condition){
     });
     return filteredCarsByCond;
 }
-
+//test
 let autosMarcaPuertaGenaro = getCarsByProperty(autosPuertaGenaro, 'marca', 'Ford');
 let outcome2 = getCarsByProperty(autosPuertaGenaro, 'modelo', 'Fiesta');
 let outcome3 = getCarsByProperty(autosPuertaGenaro, 'marca', 'Chevrolet');
@@ -106,8 +106,7 @@ console.log("\n" + "###################","\n");
 
 //ejercicio 4
 function getBoughtCar(cars, modelCar){
-    let bouthCar;
-    bouthCar = cars.find(car => {
+    let bouthCar = cars.find(car => {
         return car.modelo === modelCar;
     });
     return bouthCar;
@@ -118,3 +117,25 @@ console.log("--------------------")
 console.log("Ejercicio 4");
 console.log("--------------------");
 console.log(`Felicitaciones Genaro por haber adquirido tu nuevo y flamante ${autoComprado.marca} ${autoComprado.modelo} que disfrutes tus ${autoComprado.puertas} puertas`);
+console.log("\n" + "###################","\n");
+
+//Ejercicio 5
+
+function updatedListCars(cars, boughtCar){
+    let newList = cars;
+    let removedCar = boughtCar;
+    let element = newList.find(car => {
+        return car === removedCar;
+    });
+    let indexElement = newList.indexOf(element);
+    newList.splice(indexElement, 1);
+    return newList;
+    
+}
+
+let updatedList = updatedListCars(autosDisponibles, autoComprado);
+console.log("--------------------")
+console.log("Ejercicio 5");
+console.log("--------------------");
+console.log("Se vendío el Ford Mustang:\n");
+getModelCar(updatedList);
