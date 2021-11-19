@@ -61,24 +61,28 @@ function getCarsByProperty(cars, property, condition){
                     return car.puertas <= condition;
                 }else{
                     console.log('Error, el parametro no es numerico');
+                    break;
                 }
-                break;
+                
             case 'marca':
                 if(typeof condition === 'string'){
                     return car.marca == condition;
                 }else{
-                    console.log('Error, el parametro no es string')
+                    console.log('Error, el parametro no es string');
+                     break;
                 }
-                break;
+               
             case 'modelo':
                 if(typeof condition === 'string'){
                     return car.modelo == condition;
                 }else{
-                    console.log('Error, el parametro no es string')
+                    console.log('Error, el parametro no es string');
+                    break;
                 }
-                break;
+                
             default:
                 console.log('La propiedad ingresada no es correcta');
+                break;
         }
     });
     return filteredCarsByCond;
