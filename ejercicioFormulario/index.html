@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Form login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="imageDiv">
+            <img src="./img/login.png" class="imageLogin">  
+        </div>
+        <div class="formDiv">
+            <form action="#" method="post" class="form1">
+                <h2 class="h2">Regístrate</h2>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" class="nombre"/><br>
+                <div class="labelNombre"></div>
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" id="apellido" class="apellido"/><br>
+                <div class="labelApellido"></div>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" class="email"/><br>
+                <div class="labelEmail"></div>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" class="password"/><br>
+                <div class="labelPassword"></div>
+                <label class="checkbox">
+                    <input type="checkbox" name="terminos" id="terminos" class="terminos"/>
+                    <span></span>
+                    <span>Acepto los terminos y condiciones</span>
+                </label><br>
+                <div class="labelCheckbox"></div>
+                <input type="submit" value="Registrarse" id="submitBtn" class="submitBtn">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

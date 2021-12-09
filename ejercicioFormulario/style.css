@@ -1,0 +1,167 @@
+/*mobile*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* errores */
+.labelNombre,
+.labelApellido,
+.labelEmail,
+.labelPassword,
+.labelCheckbox {
+  width: 100%;
+  color: indianred;
+  border: solid black;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 330px;
+  height: 150px;
+  font-size: 0.9rem;
+  border-width: 0,5px;
+  
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    border: solid black;
+    box-sizing: border-box;
+}
+
+.formDiv{
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+    height: 500px;
+    padding: 30px;
+    border: solid black;
+}
+
+.form1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    
+}
+
+.form1>input{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 330px;
+    height: 150px;
+    font-size: 1.3rem;
+    border-width: 0,5px;
+    
+}
+
+.form1>input:focus{
+    border-color: red;
+    outline: 0 none;
+
+}
+
+.form1>label{
+    display: flex;
+    align-self: center;
+    width: 330px;
+    padding-top: 10px;
+}
+
+.fomr1>#terminos:hover{
+    cursor: pointer;
+}
+
+.form1>label.checkbox:hover{
+    
+    cursor: pointer;
+}
+
+/* .form1>label.checkbox{
+    padding-bottom: 10px;
+} */
+
+.h2{
+    display: flex;
+    align-self: center;
+    padding-bottom: 10px;
+}
+
+.imageDiv{
+    display: none;
+}
+
+.imageLogin{
+    width: 100%;
+    height: 100%;
+}
+
+.submitBtn:hover{
+    cursor:pointer;
+}
+
+
+.submitBtn{
+    margin-top: 5px;
+    border-radius: 50px;
+    background-color:aquamarine;
+    color: black;
+    
+}
+
+/*mobile lite*/
+@media (max-width:400px){
+    .form1{
+        width: 100%;
+    }
+
+    .form1>input{
+        width:90%;
+    }
+    .form1>label{
+        width:90%;
+    }
+    .form1>div{
+        width:90%;
+    }
+
+}
+
+
+/*Desktop*/
+@media (min-width: 999px){
+    body{
+        min-width: 100vw;
+        min-height: 100vh;
+        margin: 0;
+        border: black solid;
+        box-sizing: border-box;
+        
+    }
+
+    .imageDiv{
+        display: block;
+        width: 500px;
+        height: 500px;
+        border: solid black;
+    }
+
+    .formDiv{
+        width: 500px;
+    }
+
+    
+
+  
+    
+}
