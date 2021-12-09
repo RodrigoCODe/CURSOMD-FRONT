@@ -17,6 +17,7 @@ const labelPassword = document.querySelector(`.labelPassword`);
 
 
 const soloLetras = /^([a-zA-Z À-ÿ\u00f1\u00d1\ñ]{2,15})$/;
+const regexEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
 
 let valoresDelFormulario = {
@@ -33,8 +34,8 @@ let valoresDelFormulario = {
  * @param {*} string > string a validar
  * @returns result:boolean
  */
-const validateLetter = (string) => {
-    let result = soloLetras.test(string);
+const validatePattern = (string, regex) => {
+    let result = regex.test(string);
     console.log(result);
     return result;
 }
@@ -48,19 +49,32 @@ const renderLabelError = (element, error) => {
 const showInputError = (element) => {
     submitBtn.setAttribute("pointer-events", "none");
     element.style.border = "2px solid red";
-    nombre.setAttribute(onfocus,"2px solid red");
+    element.setAttribute(onfocus,"2px solid red");
 }
+
+
+const resetInput = (element, label) => {
+    element.style.border= "0.3px solid black !important";
+    label.innerHTML="";
+    console.log("ENTRA");
+}
+
 
 const hideError = (element, label) => {
     submitBtn.removeAttribute("pointer-events");
-    element.style.border = "2px solid green";
+    element.style.border = "2px solid green ";
     label.innerHTML = "";
 }
 
-function validation(element, label, labelText){
+
+
+function validation(element, label, labelText, regex){
     let result = element.addEventListener("input", (event) =>{
         const value = event.target.value;
-        if(!validateLetter(value)){
+        if(value=="")
+            resetInput(element, label);
+
+        if(!validatePattern(value, regex) && !!value){
             console.log(value);
             console.log(!value);
             showInputError(element);
@@ -74,35 +88,11 @@ function validation(element, label, labelText){
 }
 
 
-/*Validación input nombre*/
-nombre.addEventListener("input", (event) =>{
-    const value = event.target.value;
-    // console.log(value);
-    valoresDelFormulario.nombre = value;
-    if(!validateLetter(value)){
-        console.log(value);
-        console.log(!value);
-        showInputError(nombre);
-        renderLabelError(labelNombre, "El nombre solo puede tener de 2 a 15 letras");
-        // console.log("entra");
-    }else{
-        hideError(nombre, labelNombre);
-        valoresDelFormulario.nombre = value
-    }
-});
+validation(nombre, labelNombre,"El nombre solo puede tener de 2 a 15 letras", soloLetras);
+validation(apellido, labelApellido, "El apellido solo puede tener de 2 a 15 letras", soloLetras);
+validation(email, labelEmail, "Ingresar una dirección válida", regexEmail);
 
-/*Validación input nombre*/
-apellido.addEventListener("input", (event) =>{
-    const value = event.target.value;
-    valoresDelFormulario.apellido = value;
-    if(!validateLetter(value)){
-        console.log(value);
-        console.log(!value);
-        showInputError(apellido);
-        renderLabelError(labelApellido, "El apellido solo puede tener de 2 a 15 letras");
-        // console.log("entra");
-    }else{
-        hideError(apellido, labelApellido);
-        valoresDelFormulario.apellido= value
-    }
-});
+
+
+
+
