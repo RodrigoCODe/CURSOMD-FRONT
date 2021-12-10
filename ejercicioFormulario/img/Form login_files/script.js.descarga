@@ -17,11 +17,11 @@ const labelPassword = document.querySelector(`.labelPassword`);
 // Patterns for validation
 const soloLetras = /^([a-zA-Z À-ÿ\u00f1\u00d1\ñ]{2,15})$/;
 const regexEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-const regexPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+const regexPass = /^[A-Za-z0-9\d!@#$%^&*_-]{8,}$/;
 
 const patternNum = /[0-9]/;
 const patternChar = /[a-z À-ÿ\u00f1\u00d1\ñ]/;
-const patternUpper= /[A-Z\Ñ]/;
+const patternUpper= /^[A-Z]*$/;
 const patternSize = /^.{8,15}$/;
 const patternSymbol =  /[!@#$%^&*_-]/;
   
@@ -103,6 +103,10 @@ function validation(element, label, regexPattern){
     });
 }
 
+
+// validation(nombre, labelNombre,"El nombre solo puede tener de 2 a 15 letras", soloLetras);
+// validation(apellido, labelApellido, "El apellido solo puede tener de 2 a 15 letras", soloLetras);
+// validation(email, labelEmail, "Ingresar una dirección válida", regexEmail);
 
 function getCorrectLabel(elementName, arrayStringValue){ 
     if(arrayStringValue === undefined){
