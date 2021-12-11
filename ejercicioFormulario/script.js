@@ -18,12 +18,12 @@ const labelPassword = document.querySelector(`.labelPassword`);
 // Patrones para validación
 const regexString = /^([a-zA-ZÀ-ÿ\u00f1\u00d1]{2,}(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]+)*(?!\S+))$/;
 const regexEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-const regexPass = /^(?=.*\d)(?=.*[a-z\ñ])(?=.*[A-Z\Ñ])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
+const regexPass = /^(?=.*\d)(?=.*[a-z\u00f1])(?=.*[A-Z\u00d1])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
 
 // Patrones individuales para capturar el label correcto
 const patternNum = /[0-9]/;
-const patternChar = /[a-z À-ÿ\u00f1]/;
-const patternUpper= /[A-Z À-ÿ \u00d1]/;
+const patternChar = /[a-z \u00f1]/;
+const patternUpper= /[A-Z \u00d1]/;
 const patternSymbol =  /(?=.*[/¿?¡~+><°;.=!@#\$%\^&\*_-])/;
 const patternFinalSpace = /^(.\S+)+$/;
   
@@ -45,9 +45,6 @@ let valoresDelFormulario = {
  */
 const validatePattern = (string, regex) => {
     let result = regex.test(string);
-    console.log(string);
-    console.log(regex);
-    console.log(result);
     return result;
 }
 
@@ -184,25 +181,23 @@ function getCorrectLabel(element, valueString){
                 }
             
             case "password":
+                if(!patternNum.test(valueString)){
+                    return "La clave debe contener al menos un numero";
+                }
+                else if(!patternChar.test(valueString)){
+                    return "La clave debe contener al menos una letra";
+                }
+    
+                else if(!patternUpper.test(valueString)){
+                    return "La clave debe contener al menos una Mayuscula"
+                }
+                else if(!patternSymbol.test(valueString)){
+                    return "La clave debe tener al menos 1 caracter especial";
+                }
+                else if(arrayInternal.length < 8){
+                    return "La clave debe tener al menos 8 caracteres";
+                }
                 
-                    if(!patternNum.test(valueString)){
-                        return "La clave debe contener un numero";
-                    }
-                    else if(!patternChar.test(valueString)){
-                        return "La clave debe contener una letra";
-                    }
-        
-                    else if(!patternUpper.test(valueString)){
-                        return "La clave debe contener una Mayuscula"
-                    }
-                    else if(!patternSymbol.test(valueString)){
-                        return "La clave debe tener al menos 1 caracter especial";
-                    }
-                    else if(arrayInternal.length < 8){
-                        return "La clave debe tener al menos 8 caracteres";
-                    }
-                    
-                    
             default:
                 return "";
         }
